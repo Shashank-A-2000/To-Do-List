@@ -1,0 +1,160 @@
+html {
+    background-image: url(./Simple\ Shiny.svg);
+    min-height: 1000px;
+    font-family: 'helvetica neue';
+}
+
+h1 {
+    color: #fff;
+    padding: 10px;
+}
+
+.box {
+    max-width: 500px;
+    margin: 50px auto;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+.box-content {
+    background-color: #41d454;
+    text-align: center;
+}
+
+.item {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #F1F1F1;
+}
+
+.item:last-child {
+    border-bottom: 0;
+}
+
+.checked-item {
+    text-decoration: line-through;
+    text-decoration-color: #e66343;
+}
+
+
+input[type="checkbox"] {
+    margin: 20px;
+}
+
+.btn-save{
+	position:relative;
+	left:6em;
+}
+
+p {
+    margin: 0;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 200;
+    color: #00204a;
+}
+
+form.item {
+    text-align: center;
+    margin-left: 20px;
+}
+
+.add {
+    min-height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border-color: transparent;
+    background-color: #41d454;
+    color: #fff;
+    font-size: 30px;
+    padding-bottom: 6px;
+    border-width: 0;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #41d454;
+    border-color: #41d454;
+}
+
+.btn-success:hover {
+    color: #fff;
+    background-color: #77ff41;
+    border-color: #77ff41;
+}
+
+.btn-success:focus,
+.btn-success.focus {
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.275rem 0.55rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.ip-txt {
+    text-align: center;
+    height: 60px;
+    top: 10px;
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    font-weight: 200;
+    width: 313px;
+    transition: 0.2s;
+    display: inline-block;
+}
+
+.new-item{
+    width:410px;
+}
+.ip-txt:focus {
+    outline: none;
+    box-shadow: inset 0 -3px 0 0 #77ff41;
+}
+
+.ip-txt[name="updateText"] {
+    margin-left: 20px;
+}
+
+::placeholder {
+    color: grey;
+    opacity: 1;
+}
+
+footer {
+    color: white;
+    color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.collapse {
+    display: none;
+}
+
+.collapse.show {
+    display: inline-block;
+}
+
+.collapsing {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.35s ease;
+}

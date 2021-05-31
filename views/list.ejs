@@ -1,0 +1,70 @@
+<%- include("header") -%>
+
+    <div class="box box-content">
+        <h1>
+            Tasks
+        </h1>
+    </div>
+
+    <div class="box">
+
+        <% var count = 0 %>
+            <% items.forEach(function(item){ %>
+                <% if(item.flag === false) {%>
+                    <% count++ %>
+                        <form id="update<%=count%>-form" action="/update" method="post"></form>
+                        <form id="done<%=count%>-form" action="/done" method="post"></form>
+                        <div class="item">
+                            <input type="checkbox" name="checkbox" value="<%=item._id%>" form="done<%=count%>-form" onchange="this.form.submit()">
+                            <div>
+                                <p>
+                                    <%= item.title %>
+                                        <a data-toggle="collapse" href="#item<%=count%>" class="upper-task" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                        Edit
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="collapse" id="item<%=count%>">
+                            <input type="text" name="updateText" class="ip-txt" id="item<%=count%>" value="<%= item.title %>" form="update<%=count%>-form" autocomplete="off">
+                            <button type="submit" form="update<%=count%>-form" name="itemID" class="btn btn-success btn-save" value="<%=item._id%>">Save</button>
+                        </div>
+                <%}%>
+            <%});%>
+                                <form class="item" action="/insert" method="post">
+                                    <input type="text" class="ip-txt new-item" name="newItem" placeholder="New Item" autocomplete="off">
+                                    <button class="add" type="submit"><img src = "./plus-lg.svg"/></button>
+                                </form>
+    </div>
+    <div class="box box-content">
+        <h1>
+            Completed Tasks
+        </h1>
+    </div>
+    <div class="box">
+        <% items.forEach(function(item){ %>
+            <% if(item.flag === true) {%>
+                <form action="/delete" method="post">
+                    <div class="item">
+                        <input type="checkbox" name="checkbox" value="<%=item._id%>" onchange="this.form.submit()">
+                        <div>
+                            <p class="checked-item">
+                                <%= item.title %>
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            <%}%>
+        <%});%>
+    </div>
+    <script>
+        var x = document.querySelectorAll("a");
+        for (let i = 0; i < x.length; i++)
+            x[i].addEventListener("click", (event) => {
+                if (x[i].textContent === "Cancel")
+                    x[i].textContent = "Edit";
+                else
+                    x[i].textContent = "Cancel";
+            });
+    </script>
+    <%- include("footer") -%>
